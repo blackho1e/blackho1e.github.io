@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 쿠버네티스(Kubernetes) cert-manager로 Let's Encrypt 인증서 발급
-image: /assets/img/high-level-overview.svg
+image: /assets/img/cert-manager.png
 ---
 
 ## Kong 인그레스 설치
