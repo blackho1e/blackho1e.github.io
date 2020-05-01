@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 쿠버네티스(Kubernetes) cert-manager로 Let's Encrypt 인증서 발급
+title: 쿠버네티스 cert-manager를 이용해 Let's Encrypt 인증서 생성
 image: /assets/img/cert-manager.png
 ---
 
