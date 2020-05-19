@@ -68,7 +68,7 @@ $ kubectl get -o jsonpath="{.status.loadBalancer.ingress[0].ip}" service -n kong
 35.221.109.88
 ```
 
-위에 사으트에서 생성한 도메인을 Kong 로드 밸런서 IP (35.221.109.88) 로 설정 합니다.
+위에 사이트에서 생성한 도메인을 Kong 로드 밸런서 IP (35.221.109.88) 로 설정 합니다.
 
 DNS IP가 잘 설정되었는지 확인 방법은:
 ```bash
