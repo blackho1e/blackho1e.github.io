@@ -8,7 +8,7 @@ metadata:
 spec:
   type: {{ .Values.web.service.type }}
   selector:
-    app: {{ template "infose-bms.name" . }}
+    {{- include "infose-bms.selectorLabels" . | nindent 4 }}
   ports:
   - name: {{ $fullName }}-web
     port: {{ .Values.web.service.port }}
@@ -23,7 +23,7 @@ metadata:
 spec:
   type: {{ .Values.admin.service.type }}
   selector:
-    app: {{ template "infose-bms.name" . }}
+    {{- include "infose-bms.selectorLabels" . | nindent 4 }}
   ports:
   - name: {{ $fullName }}-admin 
     port: {{ .Values.admin.service.port }}
