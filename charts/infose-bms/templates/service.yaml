@@ -1,0 +1,30 @@
+{{- $fullName := include "infose-bms.fullname" . -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $fullName }}-web
+  labels:
+{{ include "infose-bms.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.web.service.type }}
+  selector:
+    app: {{ template "infose-bms.name" . }}
+  ports:
+  - name: {{ $fullName }}-web
+    port: {{ .Values.web.service.port }}
+    targetPort: {{ .Values.web.service.nodePort }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $fullName }}-admin 
+  labels:
+{{ include "infose-bms.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.admin.service.type }}
+  selector:
+    app: {{ template "infose-bms.name" . }}
+  ports:
+  - name: {{ $fullName }}-admin 
+    port: {{ .Values.admin.service.port }}
+    targetPort: {{ .Values.admin.service.nodePort }}

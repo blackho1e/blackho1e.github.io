@@ -1,0 +1,88 @@
+# Default values for infose-bms.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: gcr.io/info21c-net/infose-bms/cloudbms
+  pullPolicy: IfNotPresent
+  tag: latest
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+web:
+  service:
+    type: ClusterIP
+    port: 8080
+    nodePort: 8080
+
+admin:
+  service:
+    type: ClusterIP
+    port: 8081
+    nodePort: 8081
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: cloudbms
+    # kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # konghq.com/override: "https-only"
+  path: /
+  hosts:
+    web: cloudbms.infose.kro.kr
+    admin: cloudbms2.infose.kro.kr
+  tls:
+  - secretName: cloudbms.infose.kro.kr-tls
+    hosts:
+      - cloudbms.infose.kro.kr
+      - cloudbms2.infose.kro.kr
+  
+clusterIssuer:
+  metadata:
+    name: cloudbms
+  spec:
+    acme:
+      server: https://acme-v02.api.letsencrypt.org/directory
+      email: blackdole@naver.com
+      privateKeySecretRef:
+        name: cloudbms
+      http01: {}
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

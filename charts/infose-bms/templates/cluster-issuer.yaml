@@ -1,0 +1,11 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  namespace: cert-manager
+  name: {{ .Values.clusterIssuer.metadata.name }}
+  labels:
+{{ include "infose-bms.labels" . | indent 4 }}
+spec:
+{{ toYaml .Values.clusterIssuer.spec | indent 2 }}
+{{- end -}}
