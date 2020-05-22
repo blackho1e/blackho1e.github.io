@@ -1,11 +1,20 @@
 {{- if .Values.ingress.enabled -}}
+{{- $fullName := include "infose-bms.fullname" . -}}
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
   namespace: cert-manager
-  name: {{ .Values.clusterIssuer.metadata.name }}
+  name: {{ $fullName }}
   labels:
 {{ include "infose-bms.labels" . | indent 4 }}
 spec:
-{{ toYaml .Values.clusterIssuer.spec | indent 2 }}
+    acme:
+      server: https://acme-v02.api.letsencrypt.org/directory
+      email: {{ .Values.clusterIssuer.spec.acme.email }}
+      privateKeySecretRef:
+        name: {{ $fullName }}
+      solvers:
+      - http01:
+          ingress:
+            class: {{ .Values.ingress.class }}
 {{- end -}}

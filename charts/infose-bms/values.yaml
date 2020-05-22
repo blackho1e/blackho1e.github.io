@@ -31,6 +31,16 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+argocd:
+  enabled: false
+  slack:
+    message:
+      success: "`infose-bms` 프로그램 배포에 성공 하였습니다."
+      failure: "`infose-bms` 프로그램 배포중 문제가 발생했습니다."
+  source:
+    path: k8s
+    repository: https://github.com/dev-djcp/infose-bms.git
+
 web:
   service:
     type: ClusterIP
@@ -45,12 +55,7 @@ admin:
 
 ingress:
   enabled: true
-  annotations:
-    cert-manager.io/cluster-issuer: cloudbms
-    # kubernetes.io/tls-acme: "true"
-    kubernetes.io/ingress.class: "nginx"
-    # nginx.ingress.kubernetes.io/rewrite-target: /$2
-    # konghq.com/override: "https-only"
+  class: "nginx" # nginx, kong, traefik
   path: /
   hosts:
     web: cloudbms.infose.kro.kr
@@ -62,15 +67,9 @@ ingress:
       - cloudbms2.infose.kro.kr
   
 clusterIssuer:
-  metadata:
-    name: cloudbms
   spec:
     acme:
-      server: https://acme-v02.api.letsencrypt.org/directory
       email: blackdole@naver.com
-      privateKeySecretRef:
-        name: cloudbms
-      http01: {}
 
 resources: {}
 

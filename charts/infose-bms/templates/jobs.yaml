@@ -1,0 +1,48 @@
+{{- if .Values.argocd.enabled -}}
+{{- $fullName := include "infose-bms.fullname" . -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: argocd
+  name: {{ $fullName }}-slack-success
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: slack-notif
+          image: technosophos/slack-notify
+          env:
+            - name: SLACK_MESSAGE
+              value: "{{ .Values.argocd.slack.message.success }}"
+          envFrom:
+            - secretRef:
+                name: slacksecret
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: argocd
+  name: {{ $fullName }}-slack-failure
+  annotations:
+    argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: slack-notif
+        image: technosophos/slack-notify
+        env:
+        - name: SLACK_MESSAGE
+          value: "{{ .Values.argocd.slack.message.failure }}"
+        envFrom:
+        - secretRef:
+            name: slacksecret
+{{- end -}}
