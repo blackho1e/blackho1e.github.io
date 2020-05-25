@@ -207,3 +207,6 @@ Request Body:
 
 * Connection #0 to host demo.infose.kro.kr left intact
 ```
+
+## 참고자료
+https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/guides/cert-manager.md
