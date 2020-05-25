@@ -11,7 +11,7 @@ Helm은 Kubernetes의 훌륭한 패키지 관리자입니다. 복잡한 설정�
 $ helm package $YOUR_CHART_PATH/  # 해당 경로에 yaml 파일들을 압축한 $HELM_NAME.tgz 파일이 생성됩니다.
 
 # 리포지토리에 index.yaml을 작성하거나 아니면 다음 명령어로 업데이트를 합니다.
-$ helm repo index .
+$ helm repo index $YOUR_CHART_PATH/ --url https://blackho1e.github.io/charts/stable/
 
 # private 리포지토리에선 다음 명령어로 업데이트를 합니다.
 $ $ helm repo index $YOUR_CHART_PATH/ --url https://raw.githubusercontent.com/blackho1e/blackho1e.github.io/master/charts/stable/
