@@ -14,7 +14,7 @@ $ helm package $YOUR_CHART_PATH/  # 해당 경로에 yaml 파일들을 압축한
 $ helm repo index .
 
 # private 리포지토리에선 다음 명령어로 업데이트를 합니다.
-$ $ helm repo index charts/stable --url https://raw.githubusercontent.com/blackho1e/blackho1e.github.io/master/charts/stable/
+$ $ helm repo index $YOUR_CHART_PATH/ --url https://raw.githubusercontent.com/blackho1e/blackho1e.github.io/master/charts/stable/
 
 # 생성된 index.yaml와 $HELM_NAME.tgz를 github에 배포 하세요.
 $ git add .
