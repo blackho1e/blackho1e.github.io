@@ -823,3 +823,7 @@ pre {
   font-style: italic;
   font-size: 16px;
 }
+
+.blog-post {
+  margin-bottom: 5px;
+}
