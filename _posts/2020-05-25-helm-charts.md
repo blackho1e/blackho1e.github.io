@@ -46,3 +46,6 @@ helm 차트 리포지토리를 추가후 다음 명령어를 이용해서 Kubern
 ```
 $ helm install --name blackho1e/$HELM_NAME -f values.yaml
 ```
+
+## 참고자료
+https://medium.com/hackernoon/using-a-private-github-repo-as-helm-chart-repo-https-access-95629b2af27c
