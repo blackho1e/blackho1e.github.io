@@ -39,3 +39,10 @@ $ helm search $HELM_NAME
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
 blackho1e/$HELM_NAME    0.1.2           1.0             A Helm chart for Kubernetes
 ```
+
+
+## Helm에 배포된 차트를 이용해서 리소스를 설치하는 방법
+helm 차트 리포지토리를 추가후 다음 명령어를 이용해서 Kubernetes에 설치 하세요.
+```
+$ helm install --name blackho1e /$HELM_NAME -f values.yaml
+```
