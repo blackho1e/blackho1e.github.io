@@ -79,32 +79,35 @@ $ dig +short demo.infose.kro.kr
 ## Let's Encrypt 인증서 생성
 cert-manager를 위해 ClusterIssuer를 설정하십시오.
 ```bash
-echo "apiVersion: cert-manager.io/v1alpha2
+echo '
+apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name: demo.infose.kro.kr
+  name: letsencrypt-prod
   namespace: cert-manager
 spec:
   acme:
     email: blackdole@naver.com
     privateKeySecretRef:
-      name: demo.infose.kro.kr
+      name: letsencrypt-prod
     server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
     - http01:
-        ingress: {}" | kubectl apply -f -
-clusterissuer.cert-manager.io/demo.infose.kro.kr configured
+        ingress: {}
+' | kubectl apply -f -
+clusterissuer.cert-manager.io/letsencrypt-prod configured
 ```
 
 ## 응용 프로그램 인터넷에 노출
 ```bash
-$ echo "apiVersion: extensions/v1beta1
+$ echo '
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: demo-ingress
   annotations:
     kubernetes.io/tls-acme: "true"
-    cert-manager.io/cluster-issuer: demo.infose.kro.kr
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   tls:
   - hosts:
@@ -117,7 +120,8 @@ spec:
         - path: /
           backend:
             serviceName: echo
-            servicePort: 80" | kubectl apply -f -
+            servicePort: 80
+' | kubectl apply -f -
 ingress.extensions/demo-ingress configured
 ```
 
