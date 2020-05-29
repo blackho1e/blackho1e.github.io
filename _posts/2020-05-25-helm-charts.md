@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Helm 차트 github private 리포지토리에 배포 방법
+tags: [kubernetes]
 ---
 
 Helm은 Kubernetes의 훌륭한 패키지 관리자입니다. 복잡한 설정에서 특별히 k8s를 사용하는 경우 helm은 멋진 release 프로세스를 만드는데 도움이 될수 있습니다.
