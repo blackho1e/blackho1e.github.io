@@ -12,12 +12,10 @@ author: blackho1e
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
+  Blog: ""
   Tags: "https://blackho1e.github.io/tags/"
-  # Resources:
-  #   - Beautiful Jekyll: "https://beautifuljekyll.com"
-  #   - Learn markdown: "https://www.markdowntutorial.com/"
-  Home: "https://blackho1e.github.io"
+  About Me: "aboutme"
+
 
 # --- Logo --- #
 
