@@ -12,7 +12,7 @@ author: blackho1e
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Blog: ""
+  Blog: "https://blackho1e.github.io"
   Tags: "https://blackho1e.github.io/tags/"
   About Me: "aboutme"
 
