@@ -19,10 +19,8 @@
 }
 
 .highlight .c,
-.highlight .ch,
 .highlight .cd,
 .highlight .cm,
-.highlight .cpf,
 .highlight .c1,
 .highlight .cs {
     color: #928374;
@@ -83,10 +81,8 @@
 }
 
 .highlight .s,
-.highlight .sa,
 .highlight .sb,
 .highlight .sc,
-.highlight .dl,
 .highlight .sd,
 .highlight .s2,
 .highlight .sh,
@@ -127,12 +123,12 @@
 }
 
 .highlight .m,
-.highlight .mb,
 .highlight .mf,
 .highlight .mh,
 .highlight .mi,
 .highlight .il,
 .highlight .mo,
+.highlight .mb,
 .highlight .mx {
     color: #d3869b;
 }
