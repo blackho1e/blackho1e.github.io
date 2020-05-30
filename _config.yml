@@ -13,6 +13,7 @@ author: blackho1e
 
 navbar-links:
   About Me: "aboutme"
+  Tags: "https://blackho1e.github.io/tags/"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"
@@ -168,7 +169,7 @@ timezone: "Asia/Seoul"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+paginate: 7
 
 kramdown:
   input: GFM
