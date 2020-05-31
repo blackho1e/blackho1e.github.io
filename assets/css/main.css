@@ -100,7 +100,7 @@ img {
   margin-top: 30px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .disqus-comments {
     margin-top: 40px;
   }
@@ -161,7 +161,7 @@ img {
   height: 40px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .navbar-custom {
     padding: 20px 0;
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -204,7 +204,7 @@ img {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .navbar-custom .avatar-container {
     width: 100px;
     margin-top: -50px;
@@ -253,7 +253,7 @@ img {
     display: block;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .navbar-custom .nav .navlinks-container {
     text-align: center;
   }
@@ -316,7 +316,7 @@ footer .footer-custom-content {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   footer {
     padding: 50px 0;
   }
@@ -338,7 +338,7 @@ footer .footer-custom-content {
   border-bottom: 1px solid #eee;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .post-preview {
     padding: 35px 0;
   }
@@ -404,7 +404,7 @@ footer .footer-custom-content {
   font-weight: 800;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .post-preview .post-title {
     font-size: 36px;
   }
@@ -436,7 +436,7 @@ footer .footer-custom-content {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .post-preview .blog-tags {
     margin-top: 10px;
   }
@@ -536,7 +536,7 @@ footer .footer-custom-content {
   bottom: 0;
   display: none;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .intro-header {
     margin-top: 130px;
   }
@@ -637,7 +637,7 @@ footer .footer-custom-content {
   border-radius: 0;
   color: #404040;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .pager li a {
     padding: 15px 25px;
   }
@@ -657,7 +657,7 @@ footer .footer-custom-content {
   margin-top: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .pager.blog-pager {
     margin-top: 10px;
   }
