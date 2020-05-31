@@ -12,7 +12,7 @@ author: blackho1e
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Blog: "index"
+  Blog: "/"
   Tags: "tags"
   About Me: "aboutme"
 
