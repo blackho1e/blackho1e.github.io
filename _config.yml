@@ -12,8 +12,8 @@ author: blackho1e
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Blog: "https://blackho1e.github.io"
-  Tags: "https://blackho1e.github.io/tags/"
+  Blog: "index"
+  Tags: "tags"
   About Me: "aboutme"
 
 
@@ -167,7 +167,7 @@ timezone: "Asia/Seoul"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 7
+paginate: 10
 
 kramdown:
   input: GFM
