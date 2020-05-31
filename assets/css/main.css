@@ -442,7 +442,7 @@ footer .footer-custom-content {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .post-image, .post-image img {
     height: 100px;
     width: 100px;
@@ -615,7 +615,7 @@ footer .footer-custom-content {
 .reader-time {
   display: inline-block;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .reader-time {
     display: block;
   }
