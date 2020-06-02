@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kong 인그레스 Basic Auth 적용
-image: /assets/img/tekton.svg
+image: /assets/img/kong.png
 tags: [kubernetes, kong, ingress]
 ---
 
