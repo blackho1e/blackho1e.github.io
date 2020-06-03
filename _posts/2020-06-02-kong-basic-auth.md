@@ -14,7 +14,7 @@ $ kubectl apply -f https://bit.ly/k8s-httpbin
 service/httpbin created
 deployment.apps/httpbin created
 ```
-방금 만든 httpbin 서비스를 프록시하기 위해 Ingress 규칙을 만듭니다.
+방금 만든 httpbin 서비스를 프록시하기 위해 인그레스 규칙을 만듭니다.
 ```bash
 $ echo '
 apiVersion: extensions/v1beta1
@@ -37,11 +37,11 @@ ingress.extensions/demo created
 ```
 아이피를 확인 하십시오.
 ```bash
-$ kubectl get ingress demo                                                                                                                                            master 
+$ kubectl get ingress demo
 NAME   HOSTS   ADDRESS         PORTS   AGE
 demo   *       35.XXX.XXX.XX   80      80s
 ```
-인그레스 룰을 테스트 하십시오.
+인그레스 규칙을 테스트 하십시오.
 ```bash
 $ curl -i 35.XXX.XXX.XX/foo/status/200
 HTTP/1.1 200 OK
