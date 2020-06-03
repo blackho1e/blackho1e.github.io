@@ -60,21 +60,21 @@ Kong 로드 밸런서 IP 주소를 가져옵니다.
 ```bash
 $ kubectl get service -n kong kong-proxy
 NAME         TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)                      AGE
-kong-proxy   LoadBalancer   10.35.251.209   35.221.109.88   80:32118/TCP,443:31462/TCP   3d16h
+kong-proxy   LoadBalancer   10.35.251.209   35.XXX.XXX.XX   80:32118/TCP,443:31462/TCP   3d16h
 ```
 
 IP 주소만 얻으려면:
 ```bash
 $ kubectl get -o jsonpath="{.status.loadBalancer.ingress[0].ip}" service -n kong kong-proxy
-35.221.109.88
+35.XXX.XXX.XX
 ```
 
-위에 사이트에서 생성한 도메인을 Kong 로드 밸런서 IP (35.221.109.88) 로 설정 합니다.
+위에 사이트에서 생성한 도메인을 Kong 로드 밸런서 IP (35.XXX.XXX.XX) 로 설정 합니다.
 
 DNS IP가 잘 설정되었는지 확인 방법은:
 ```bash
 $ dig +short demo.infose.kro.kr
-35.221.109.88
+35.XXX.XXX.XX
 ```
 
 ## Let's Encrypt 인증서 생성
@@ -129,8 +129,8 @@ ingress.extensions/demo-ingress configured
 ## 테스트 HTTPS
 ```bash
 $ curl -v https://demo.infose.kro.kr
-*   Trying 35.221.109.88:443...
-* Connected to demo.infose.kro.kr (35.221.109.88) port 443 (#0)
+*   Trying 35.XXX.XXX.XX:443...
+* Connected to demo.infose.kro.kr (35.XXX.XXX.XX) port 443 (#0)
 * ALPN, offering h2
 * ALPN, offering http/1.1
 * successfully set certificate verify locations:
@@ -183,34 +183,7 @@ Pod Information:
         pod name:       echo-758859bbfb-c6446
         pod namespace:  default
         pod IP: 10.32.2.95
-
-Server values:
-        server_version=nginx: 1.12.2 - lua: 10010
-
-Request Information:
-        client_address=10.32.1.74
-        method=GET
-        real path=/
-        query=
-        request_version=1.1
-        request_scheme=http
-        request_uri=http://demo.infose.kro.kr:8080/
-
-Request Headers:
-        accept=*/*
-        connection=keep-alive
-        host=demo.infose.kro.kr
-        user-agent=curl/7.69.1
-        x-forwarded-for=106.247.255.90
-        x-forwarded-host=demo.infose.kro.kr
-        x-forwarded-port=8443
-        x-forwarded-proto=https
-        x-real-ip=106.247.255.90
-
-Request Body:
-        -no body in request-
-
-* Connection #0 to host demo.infose.kro.kr left intact
+<-- clipped -->
 ```
 
 ## 참고자료
