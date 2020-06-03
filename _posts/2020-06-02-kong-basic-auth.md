@@ -92,7 +92,7 @@ $ kubectl create secret generic httpbin-secret \
   --from-literal=username=demo --from-literal=password=12345
 ```
 
-이제 이플러그인을 konghq.com/plugins annotation을 사용하여 생성 한 이전 Ingress 규칙과 연결하십시오.
+이제 이플러그인을 konghq.com/plugins annotation을 사용하여 생성 한 이전 인그레스 규칙과 연결하십시오.
 ```bash
 $ kubectl patch ingress demo -p '{"metadata":{"annotations":{"konghq.com/plugins":"httpbin-auth"}}}'
 ingress.extensions/demo patched
