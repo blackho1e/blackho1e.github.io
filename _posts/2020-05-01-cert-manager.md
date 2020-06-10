@@ -187,4 +187,4 @@ Pod Information:
 ```
 
 ## 참고자료
-[https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/guides/cert-manager.md](https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/guides/cert-manager.md)
+- [https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/guides/cert-manager.md](https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/guides/cert-manager.md)
